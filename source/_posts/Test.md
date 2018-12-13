@@ -20,7 +20,7 @@ categories: 9
 
 [首页](https://bananice100.github.io/)
 
-![插入图片](https://imgsa.baidu.com/forum/w%3D580/sign=fc04932fc5fcc3ceb4c0c93ba245d6b7/06caf309b3de9c826a4ce6826181800a19d84320.jpg)
+![插入图片](/images/长颈鹿.jpg)
 *命运的Revue*
 **分かります**
 
