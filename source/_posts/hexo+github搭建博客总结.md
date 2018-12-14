@@ -13,7 +13,7 @@ date: 2018-12-14 11:41:22
     在cmd中输入
     >npm install -g hexo-cli
     命令的意思是安装hexo包到全局，所以操作路径应该没什么影响
-    ![npm命令](\images\hexo+github搭建博客总结\安装hexo.png)
+    ![npm命令](\images\hexo+github搭建博客总结\安装hexo.PNG)
 
 # 二、用Hexo在本地搭建博客
   -切换到一个用于保存本地博客的文件夹，输入命令：
@@ -28,9 +28,9 @@ date: 2018-12-14 11:41:22
 # 三、上传到github
   1.注册github账号
   2.创建新项目：
-    ！[创建新项目](\images\hexo+github搭建博客总结\创建仓库.png)
+    ！[创建新项目](\images\hexo+github搭建博客总结\创建仓库.PNG)
     项目名称必须是：用户名.github.io
-    ![命名](\images\hexo+github搭建博客总结\repository name.png)
+    ![命名](\images\hexo+github搭建博客总结\repository name.PNG)
   3.配置身份信息：
     >git config --global user.name "yourname"
     >git config --global user.email "youremail"
@@ -44,7 +44,7 @@ date: 2018-12-14 11:41:22
     >  type: git
     >  repository: https://github.com/bananice100/bananice100.github.io.git
     >  branch: master
-    ![config](\images\hexo+github搭建博客总结\config.png)
+    ![config](\images\hexo+github搭建博客总结\config.PNG)
     *!!!参数后面的冒号一定要加一个空格*
   5.安装一个插件：
     >npm install hexo-deployer-git --save
@@ -74,10 +74,10 @@ date: 2018-12-14 11:41:22
     >git remote add origin repository地址 //绑定远程仓库
     >git push origin hexo //push到github项目的hexo分支上
     - commit -m 后面的字符串：(会添加在图中的位置)
-      ![commit](\images\hexo+github搭建博客总结\commit -m.png)
+      ![commit](\images\hexo+github搭建博客总结\commit -m.PNG)
     - 对比hexo分支和本地站点文件：
-      ![git](\images\hexo+github搭建博客总结\hexo1.png)
-      ![local](\images\hexo+github搭建博客总结\hexo0.png)
+      ![git](\images\hexo+github搭建博客总结\hexo1.PNG)
+      ![local](\images\hexo+github搭建博客总结\hexo0.PNG)
 
   2.其他终端：
     准备工作：安装Node.js,Git
