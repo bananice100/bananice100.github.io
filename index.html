@@ -249,6 +249,141 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/14/hexo+github搭建博客总结/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/14/hexo+github搭建博客总结/" itemprop="url">Hexo+github搭建博客总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-14T11:41:22+08:00">
+                2018-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一、前期准备工作"><a href="#一、前期准备工作" class="headerlink" title="一、前期准备工作"></a>一、前期准备工作</h1><p>  1.安装node.js：<br>    <a href="http://nodejs.cn/" target="_blank" rel="noopener">安装地址</a><br>  2.安装git：<br>      <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">安装地址</a><br>      <img src="\images\hexo+github搭建博客总结\git工作流.png" alt="git工作流"><br>  3.使用npm安装Hexo：<br>    在cmd中输入<br>    &gt;npm install -g hexo-cli<br>    命令的意思是安装hexo包到全局，所以操作路径应该没什么影响<br>    <img src="\images\hexo+github搭建博客总结\安装hexo.PNG" alt="npm命令"></p>
+<h1 id="二、用Hexo在本地搭建博客"><a href="#二、用Hexo在本地搭建博客" class="headerlink" title="二、用Hexo在本地搭建博客"></a>二、用Hexo在本地搭建博客</h1><p>  -切换到一个用于保存本地博客的文件夹，输入命令：<br>    &gt;hexo i blog //hexo init <folder>在指定的文件夹里创建所需要的文件，i是init的缩写<br>    &gt;cd blog//切换到站点根目录<br>    &gt;hexo g //hexo generate生成静态文件<br>    &gt;//静态文件保存在public文件夹中<br>    &gt;hexo s //hexo server启动服务器，访问网址为:<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a><br>    <img src="\images\hexo+github搭建博客总结\localhost.png" alt="展示图片"><br>  -对hexo页面属性的编辑，例如更改主题等，可以到<a href="https://hexo.io查看" target="_blank" rel="noopener">https://hexo.io查看</a></folder></p>
+<h1 id="三、上传到github"><a href="#三、上传到github" class="headerlink" title="三、上传到github"></a>三、上传到github</h1><p>  1.注册github账号<br>  2.创建新项目：<br>    ！<a href="\images\hexo+github搭建博客总结\创建仓库.PNG">创建新项目</a><br>    项目名称必须是：用户名.github.io<br>    <img src="\images\hexo+github搭建博客总结\repository name.PNG" alt="命名"><br>  3.配置身份信息：<br>    &gt;git config –global user.name “yourname”<br>    &gt;git config –global user.email “youremail”<br>    &gt;//此处的yourname和youremail分别是Github账号的用户名和绑定邮箱<br>  4.修改hexo站点的配置文件：<br>    打开博客根目录里面的_config.yml//大多数配置都是在_config.yml中修改的<br>    修改deploy参数 //deploy参数是关于部署部分的设置。<br>    &gt;# Deployment<br>    &gt;## Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a><br>    &gt;deploy:<br>    &gt;  type: git<br>    &gt;  repository: <a href="https://github.com/bananice100/bananice100.github.io.git" target="_blank" rel="noopener">https://github.com/bananice100/bananice100.github.io.git</a><br>    &gt;  branch: master<br>    <img src="\images\hexo+github搭建博客总结\config.PNG" alt="config"><br>    <em>!!!参数后面的冒号一定要加一个空格</em><br>  5.安装一个插件：<br>    &gt;npm install hexo-deployer-git –save<br>  6.部署网站：<br>    &gt;hexo d//hexo deploy的缩写<br>    部署过程中会弹出一个窗口，按照要求输入github账户密码就行。</p>
+<h1 id="四、多终端同步"><a href="#四、多终端同步" class="headerlink" title="四、多终端同步"></a>四、多终端同步</h1><p>  -同步更新的思路：<br>    在github上面新建一个hexo分支，把本地hexo站点的文件同步到hexo分支上。<br>    每次更新之前下载hexo分支上的文件，本地更新完之后再上传。<br>    <em>问题：这个多终端共同开发的思路我是直接参考的其他作者的文章，所有参考文章的链接会在底部给出。</em><br>    <em>但是这个方式在多个人同时编辑的时候可能会产生互相覆盖的问题。后续可能会采取其他方式。</em></p>
+<p>  <img src="\images\hexo+github搭建博客总结\git工作流.png" alt="git工作流"><br>  <a href="http://www.runoob.com/w3cnote/git-guide.html" target="_blank" rel="noopener">github简明教程</a><br>  <em>有助于理解下面的操作</em></p>
+<p>  1.将配置文件上传到hexo分支上<br>    &gt;git init  //初始化本地仓库<br>    &gt;git add . //添加文件到Index(暂存区),这里有些教程用source代替.，只上传部分文件。<br>    &gt;//source文件保存博客需要的md文件和图片等，如果更改_config.yml等其他配置文件可能<br>    &gt;//就会出现问题，所以这里选择了全部上传。<br>    &gt;git commit -m “Blog files”<br>    &gt;git branch hexo      //新建hexo分支<br>    &gt;git checkout hexo    //切换到hexo分支<br>    &gt;git remote add origin repository地址 //绑定远程仓库<br>    &gt;git push origin hexo //push到github项目的hexo分支上</p>
+<pre><code>- commit -m 后面的字符串：(会添加在图中的位置)
+  ![commit](\images\hexo+github搭建博客总结\commit -m.PNG)
+- 对比hexo分支和本地站点文件：
+  ![git](\images\hexo+github搭建博客总结\hexo1.PNG)
+  ![local](\images\hexo+github搭建博客总结\hexo0.PNG)
+</code></pre><p>  2.其他终端：<br>    准备工作：安装Node.js,Git<br>    第一次更新博客：<br>    &gt;git clone -b hexo repository地址 //将github中hexo分支克隆到本地<br>    &gt;cd yourname.github.io<br>    &gt;npm install //安装所需组件<br>    &gt;hexo new post “new blog name” //新建一个.md文件，这个文件是放在/source/_posts路径下的。<br>    &gt;//“new blog name”就是文件名，打开文件先编辑。<br>    &gt;git add .<br>    &gt;git commit -m “blog files”<br>    &gt;git push orgin hexo  //更新分支<br>    &gt;hexo d -g//部署博客<br>    后续:<br>    后续的编辑就不用clone了,直接用pull更新本地文件。<br>    &gt;git pull origin hexo //要更新你的本地仓库至最新改动<br>    剩下的操作和之前一样<br>    &gt;hexo new post “new blog name”<br>    &gt;git add .<br>    &gt;git commit -m “blog files”<br>    &gt;git push origin hexo<br>    &gt;hexo d -g</p>
+<p>  <em>Tips:想要在上传之前查看效果，可以不用hexo d -g,而是用hexo s,然后在localhost:4000即可查看。</em></p>
+<h1 id="写在最后："><a href="#写在最后：" class="headerlink" title="写在最后："></a>写在最后：</h1><pre><code>这篇总结是在博客搭建完成之后写的，可能会有一些漏写的或者没有想到的东西，在搭建过程中出现问题可以联系
+</code></pre><p>  我们(还没添加评论功能@_@)，其他终端的部分，没有测试，同样不知道会不会出问题。后续会完善。</p>
+<p>  参考文章：<br>  <a href="https://blog.csdn.net/Hoshea_chx/article/details/78826689" target="_blank" rel="noopener">https://blog.csdn.net/Hoshea_chx/article/details/78826689</a><br>  <a href="https://xuanwo.io/2015/03/26/hexo-intor/" target="_blank" rel="noopener">https://xuanwo.io/2015/03/26/hexo-intor/</a><br>  <a href="https://blog.csdn.net/Monkey_LZL/article/details/60870891" target="_blank" rel="noopener">https://blog.csdn.net/Monkey_LZL/article/details/60870891</a><br>  和相关官方文档</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/13/upload-2/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -804,7 +939,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
