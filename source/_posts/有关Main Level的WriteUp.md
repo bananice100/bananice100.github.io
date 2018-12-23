@@ -61,7 +61,7 @@ else { e.preventDefault(); alert('Incorrect login') } })})</script>
 这道题一上来给了一个下拉框，先看一下**hint**
 >This page is coded to only let in one user (Ronald). But there is no Ronald?! You will need to find a way to add him to the list.
 
-大意是这个只有在提交**Ronald**的时候才能通过，但下拉列表里没有这个，所以我们得自己构造，这里就要用道开发者工具，也就是编辑源代码的，大部分浏览器可以使用**F12**达到这一功能，![Alt text](./images/有关Main Level的WriteUp/1544714883960.png)
+大意是这个只有在提交**Ronald**的时候才能通过，但下拉列表里没有这个，所以我们得自己构造，这里就要用道开发者工具，也就是编辑源代码的，大部分浏览器可以使用**F12**达到这一功能，![Alt text](/images/有关Main Level的WriteUp/1544714883960.png)
 大致就是在这里修改一个，然后就可以提交了
 ## Main Level 7
 这道题看一下**hint**
@@ -98,7 +98,7 @@ Disallow: /ctf/8/php/*
   <input type="submit" value="Submit" class="button">
 ```
  这里我们得到了一个邮箱*admin@hackthis.co.uk*，试着讲这个输入，但是失败了。
- ![Alt text](./images/有关Main Level的WriteUp/1544718369046.png)
+ ![Alt text](/images/有关Main Level的WriteUp/1544718369046.png)
 就这里当时困扰了我好久，不是这个邮箱那是哪个邮箱啊，后面上该题的讨论区域，摸索到了一点门道。
 既然不让信件发送到官方的邮箱，那我可以把这个发送到自己邮箱啊，就把**后面的这个验证值改成了自己邮箱**，然后输入自己邮箱，成功解决。
 ## Main Level 10

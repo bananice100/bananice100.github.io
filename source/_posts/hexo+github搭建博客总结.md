@@ -71,7 +71,8 @@ date: 2018-12-14 11:41:22
     >git commit -m "Blog files"
     >git branch hexo      //新建hexo分支
     >git checkout hexo    //切换到hexo分支
-    >git remote add origin repository地址 //绑定远程仓库
+    >git remote add origin repository地址.git //绑定远程仓库;
+    >例如:git remote add origin https://github.com/bananice100/bananice100.github.io.git
     >git push origin hexo //push到github项目的hexo分支上
     - commit -m 后面的字符串：(会添加在图中的位置)
       ![commit](\images\hexo+github搭建博客总结\commit -m.PNG)
@@ -82,7 +83,8 @@ date: 2018-12-14 11:41:22
   2.其他终端：
     准备工作：安装Node.js,Git
     第一次更新博客：
-    >git clone -b hexo repository地址 //将github中hexo分支克隆到本地
+    >git clone -b hexo repository地址.git //将github中hexo分支克隆到本地
+    >例如:git clone -b hexo https://github.com/bananice100/bananice100.github.io.git
     >cd yourname.github.io 
     >npm install //安装所需组件
     >hexo new post "new blog name" //新建一个.md文件，这个文件是放在/source/_posts路径下的。
